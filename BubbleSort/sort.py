@@ -10,7 +10,7 @@ from Modules.Screen.Screen import Screen
 
 def bubbleSort(array, desc=False):
     a = array.copy()
-    start_time = time.time()
+    start_time = time.perf_counter_ns()
     n = len(array)
     for i in range(n):
         for j in range(i + 1, n, 1):
@@ -30,12 +30,12 @@ def bubbleSort(array, desc=False):
 def main(args):
     screen = Screen("Bubble Sort")
     screen.display()
-    n = np.random.randint(1, 100)
+    n = 400
     to_sort = np.random.randint(1, 10000, size=n, dtype=np.int64)
     print(f"[IN PROCESS] Processing input: {to_sort}")
     result, start_time = bubbleSort(to_sort)
-    exec_time = time.time() - start_time
-    print(f"[INFO] Input successfully proccessed. Time spent: {exec_time}s")
+    exec_time = time.perf_counter_ns() - start_time
+    print(f"[INFO] Input successfully proccessed. Time spent: {exec_time}ns")
     print(f"""
     INPUT: {to_sort}
     OUTPUT: {result}
