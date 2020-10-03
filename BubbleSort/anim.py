@@ -2,6 +2,15 @@ from manim import *
 import shutil
 
 
+#for custom storage
+STORE_PATH = os.path.join(os.getenv("HOME"), "Videos",
+                          "Videos", "ManimSort", "BubbleSort")
+FILE_PATH = os.path.join(
+    os.getcwd(), "ManimSort", "BubbleSort", "anim.py"
+)
+CLASS_TO_RENDER = "Sorting"
+
+
 def compute_scale_factor(scaler):
     assert scaler >= 1
     new_scale = 1 - (scaler - 1)
@@ -139,8 +148,8 @@ class Sorting(Scene):
         name = Tex("BubbleSort").scale(
             1.4).set_color_by_gradient([WHITE, GRAY, BLUE])
         name.to_edge(UP, buff=1)
-        n = np.random.randint(1, 200)
-        to_sort = np.random.randint(1, 10000, size=n, dtype=np.int64)
+        n = 6
+        to_sort = np.random.randint(1, 1000, size=n, dtype=np.int64)
 
         sort = Sort(to_sort).shift(DOWN)
         self.play(
@@ -218,9 +227,15 @@ def del_folder():
 
 
 def main():
+    flags = [
+        "-e",  # high quality
+        f"--media_dir {STORE_PATH}"
+    ]
+    execution_command = f"manim {FILE_PATH} {CLASS_TO_RENDER} "
+    execution_command += " ".join(flags)
     # for creation purposes
     del_folder()
-    os.system(r"manim .\Python\Algorithms\ManimSort\Bubble\anim.py Sorting -p")
+    os.system(execution_command)
 
 
 if __name__ == "__main__":
