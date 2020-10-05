@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="VashLT" content="ManimSort">
-    <title>Welcome to ManimSort</title>
+    <title>ManimSort</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- latex support -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
         </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ 
+            "HTML-CSS": { scale: 200, linebreaks: { automatic: true }, color: "#8CDF58"}, 
+            SVG: { linebreaks: { automatic:true } }, 
+            displayAlign: "left" });
+    </script>
 </head>
 
 <body>
+    <h1>Welcome to ManimSort</h1>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <p>This page is all about visualization of sorting algorithms via
         <a href="https://github.com/ManimCommunity/manim" target="_blank">Manim </a> animations.
     </p>
